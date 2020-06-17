@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- Need to declare another activity if using an intent, should do automatically -->
+        <activity android:name=".Selection">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,5 +20,5 @@
             </intent-filter>
         </activity>
     </application>
-    //hello there Akeena
+
 </manifest>
