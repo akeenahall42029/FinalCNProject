@@ -20,13 +20,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
         evelynB = findViewById(R.id.evelynB);
         roebuckB = findViewById(R.id.roebuckB);
         uthmanB = findViewById(R.id.uthmanB);
         michaelB = findViewById(R.id.michaelB);
         instructions = findViewById(R.id.instructions);
         title = findViewById(R.id.titleTd);
-
 
     }
 
