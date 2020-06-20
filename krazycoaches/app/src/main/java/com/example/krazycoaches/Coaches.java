@@ -6,7 +6,7 @@ public class Coaches {
     int hobby;
     String[] Quotes;
 
-    public Coaches(int image, int health, int hobby, String name) {
+    public Coaches(int image, int hunger, int hobby, String name) {
         this.image = image;
         this.hunger = hunger;
         this.hobby = hobby;
@@ -27,7 +27,7 @@ public class Coaches {
         return hunger;
     }
 
-    public void setHealth(int hunger) {
+    public void setHunger(int hunger) {
         this.hunger = hunger;
     }
 

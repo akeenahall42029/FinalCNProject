@@ -26,7 +26,7 @@ public class Selection extends AppCompatActivity {
     ImageView coachImg;
     Button feed;
     Button hobby;
-    ProgressBar hunger;
+    ProgressBar hungerBar;
     ProgressBar hobbyBar;
     Button memeBtn;
     Coaches coach;
@@ -46,7 +46,7 @@ public class Selection extends AppCompatActivity {
         coachImg = findViewById(R.id.coachImg);
         feed = findViewById(R.id.Feed);
         hobby = findViewById(R.id.hobbyBtn);
-        hunger = findViewById(R.id.hungerBar);
+        hungerBar= findViewById(R.id.hungerBar);
         hobbyBar = findViewById(R.id.hobbybar);
         memeBtn = findViewById(R.id.photoG);
         coachName = findViewById(R.id.coachName);
@@ -73,26 +73,17 @@ public class Selection extends AppCompatActivity {
         //coachImg.setImageResource(coach.getImage());
         coachName.setText(coach.getName());
         //progress bar amounts declared
-        hunger.setMax(coach.getHunger());
+        hungerBar.setMax(coach.getHunger());
         hobbyBar.setMax(coach.getHobby());
         //countdown time for hunger declaration
          hungerTime = 40000;
          hobbyTime = 40000;
          //ADD COD FROM CLONE
-        resetTime(hungerTime);
+        resetTime(40000);
 
-        hobbyTimer = new CountDownTimer(hobbyTime,10000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                hobbyBar.setProgress((int)millisUntilFinished);
-            }
 
-            @Override
-            public void onFinish() {
 
-            }
-        }.start();
-        //onClick listener for feed button
+        //onClick listener for feed button and hobby button
         feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,11 +93,13 @@ public class Selection extends AppCompatActivity {
 
             }
         });
+        //bug with code, the hobby button increases the hunger progress bar as well, ask for peer help
+
         hobby.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 hobbyTimer.cancel();
-                hobbyTime+=2000;
+                hobbyTime+=3000;
                 resetTime(hobbyTime);
             }
         });
@@ -117,21 +110,37 @@ public class Selection extends AppCompatActivity {
     }
     public void resetTime(long newHunger){
         hungerTime=newHunger;
+        hobbyTime=newHunger;
         hungerTimer = new CountDownTimer(hungerTime,10000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 //setting the progress bar value to the amount of the countdown timer
-                hunger.setProgress((int)millisUntilFinished);
+                hungerBar.setProgress((int)millisUntilFinished);
                 hungerTime = millisUntilFinished;
                 //conditional for changing animations
-
             }
 
             @Override
             public void onFinish() {
                 hungerTime= 0;
-                hunger.setProgress(0);
+                hungerBar.setProgress(0);
 
+
+            }
+        }.start();
+
+
+        hobbyTimer = new CountDownTimer(hobbyTime,10000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                hobbyBar.setProgress((int)millisUntilFinished);
+                hobbyTime = millisUntilFinished;
+            }
+
+            @Override
+            public void onFinish() {
+                hobbyTime=0;
+                hobbyBar.setProgress(0);
 
             }
         }.start();
@@ -175,9 +184,6 @@ public class Selection extends AppCompatActivity {
 
             }
         });
-
-
-
 
 
 //        //adding the request to RequestQueue

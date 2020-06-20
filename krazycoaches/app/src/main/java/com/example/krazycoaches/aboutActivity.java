@@ -44,10 +44,10 @@ public class aboutActivity extends AppCompatActivity {
                             JSONObject uthmanDawg = coach.getJSONObject(0);
                             //code for toasts
                             String uthamnName= uthmanDawg.getString("quotes");
-                            String [] uthmanQuotes = uthamnName.split("*");
+                            String [] uthmanQuotes = uthamnName.split("%");
                             //if(timer >20000){ uthmanQuotes[0]}; this would get the first quote
 
-                            testTest.setText("College" + uthamnName);
+                            testTest.setText("College" + uthmanQuotes[0]);
                         } catch (JSONException e) {
                             //programmers use this to figure out what went wrong, trouble shooting tactic
                             e.printStackTrace();
