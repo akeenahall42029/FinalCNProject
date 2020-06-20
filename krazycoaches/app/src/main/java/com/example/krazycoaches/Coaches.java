@@ -6,11 +6,10 @@ public class Coaches {
     int hobby;
     String[] Quotes;
 
-    public Coaches(int image, int health, int hobby, String[] quotes, String name) {
+    public Coaches(int image, int health, int hobby, String name) {
         this.image = image;
         this.hunger = hunger;
         this.hobby = hobby;
-        Quotes = quotes;
         this.name = name;
     }
 
@@ -38,14 +37,6 @@ public class Coaches {
 
     public void setHobby(int hobby) {
         this.hobby = hobby;
-    }
-
-    public String[] getQuotes() {
-        return Quotes;
-    }
-
-    public void setQuotes(String[] Quotes) {
-        this.Quotes =Quotes;
     }
 
     public String getName() {
