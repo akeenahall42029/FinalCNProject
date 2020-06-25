@@ -16,9 +16,9 @@
         <!-- Need to declare another activity if using an intent, should do automatically -->
         <activity android:name=".Selection">
         </activity>
-        <activity android:name=".MainActivity"/>
 
-        <activity android:name=".aboutActivity">
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
