@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton evelynB;
@@ -15,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton michaelB;
     TextView instructions;
     TextView title;
+    CountDownTimer instruction_timer;
+    int instruct_time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,36 @@ public class MainActivity extends AppCompatActivity {
         michaelB = findViewById(R.id.michaelB);
         instructions = findViewById(R.id.instructions);
         title = findViewById(R.id.titleTd);
+
+        //instruction countdown
+        instruct_time = 30000;
+        instruction_timer = new CountDownTimer(instruct_time,1000){
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                if (millisUntilFinished<=30000) {
+                    instructions.setText("yuuuur");
+                }
+
+                if(millisUntilFinished<=25000){
+                    instructions.setText("Hello there, this is sample code ");
+                }
+                if (millisUntilFinished<=20000){
+                    instructions.setText("Kayley please edit me ");
+                }
+                if (millisUntilFinished<=15000){
+                    instructions.setText("the coaches are great");
+
+                }
+            }
+
+            @Override
+            public void onFinish() {
+
+               instructions.setText("Choose a coach!");
+            }
+        }.start();
+
 
     }
 

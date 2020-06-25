@@ -1,5 +1,6 @@
 package com.example.krazycoaches;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,6 +39,9 @@ public class Selection extends AppCompatActivity {
     long hobbyTime;
     int index = 0;
     String [] quoteResult;
+    //code for toast
+    int duration = Toast.LENGTH_LONG;
+
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +63,7 @@ public class Selection extends AppCompatActivity {
         if (flag == 1){
             //pull quote info for the String array for each quote
             coach = new Coaches(R.drawable.evelyntester,40000,40000,"Evelyn");
+//            Toast testerToast  = Toast.makeText()
 
         } else if (flag2 == 2) {
             coach = new Coaches(R.drawable.roebucktester,40000,40000, "Roebuck");
@@ -68,28 +74,30 @@ public class Selection extends AppCompatActivity {
         }else{
             coach = new Coaches(R.drawable.michaeltester,40000,40000,"Michael");
         }
-        getQuotes();
+
         //info input depending on which button was clicked
         //coachImg.setImageResource(coach.getImage());
         coachName.setText(coach.getName());
         //progress bar amounts declared
         hungerBar.setMax(coach.getHunger());
         hobbyBar.setMax(coach.getHobby());
+        getQuotes();
         //countdown time for hunger declaration
          hungerTime = 40000;
          hobbyTime = 40000;
          //ADD COD FROM CLONE
-        resetTime(40000);
+        resetTime(hungerTime,hobbyTime);
 
-
-
+//        if(hobbyTime<40000 && hobbyTime>20000){
+//            hungerBar.setProgress();
+//        }
         //onClick listener for feed button and hobby button
         feed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 hungerTimer.cancel();
-                hungerTime+=2000;
-                resetTime(hungerTime);
+                hungerTime+=5000;
+                resetTime(hungerTime,hobbyTime);
 
             }
         });
@@ -99,25 +107,33 @@ public class Selection extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 hobbyTimer.cancel();
-                hobbyTime+=3000;
-                resetTime(hobbyTime);
+                hobbyTime+=5000;
+                resetTime(hungerTime,hobbyTime);
             }
         });
         //pulling from api for toasts
         //
+        if(hungerTime==0){
+            //play toast
+            Toast testToast = Toast.makeText(getApplication(),quoteResult[3],duration);
+            testToast.show();
+        }
+
 
 
     }
-    public void resetTime(long newHunger){
+    public void resetTime(long newHunger,long newHobby){
         hungerTime=newHunger;
-        hobbyTime=newHunger;
-        hungerTimer = new CountDownTimer(hungerTime,10000) {
+        hobbyTime=newHobby;
+        hungerTimer = new CountDownTimer(hungerTime,5500) {
             @Override
             public void onTick(long millisUntilFinished) {
                 //setting the progress bar value to the amount of the countdown timer
                 hungerBar.setProgress((int)millisUntilFinished);
                 hungerTime = millisUntilFinished;
                 //conditional for changing animations
+
+
             }
 
             @Override
@@ -130,7 +146,7 @@ public class Selection extends AppCompatActivity {
         }.start();
 
 
-        hobbyTimer = new CountDownTimer(hobbyTime,10000) {
+        hobbyTimer = new CountDownTimer(hobbyTime,6500) {
             @Override
             public void onTick(long millisUntilFinished) {
                 hobbyBar.setProgress((int)millisUntilFinished);
@@ -145,6 +161,7 @@ public class Selection extends AppCompatActivity {
             }
         }.start();
     }
+    //this function pulls the quotes according to the coach that was clicked on
     public void getQuotes(){
 
         if (coach.getName().equals("Evelyn")){
@@ -171,7 +188,6 @@ public class Selection extends AppCompatActivity {
                             //code for toasts
                             String coachQuote= coachObject.getString("quotes");
                             quoteResult = coachQuote.split("%");
-                            //if(timer >20000){ uthmanQuotes[0]}; this would get the first quote
 
                         } catch (JSONException e) {
                             //programmers use this to figure out what went wrong, trouble shooting tactic
