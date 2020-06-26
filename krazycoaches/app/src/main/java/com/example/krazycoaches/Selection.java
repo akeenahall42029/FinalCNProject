@@ -96,6 +96,7 @@ public class Selection extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 hungerTimer.cancel();
+                hobbyTimer.cancel();
                 hungerTime+=5000;
                 resetTime(hungerTime,hobbyTime);
 
@@ -107,6 +108,7 @@ public class Selection extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 hobbyTimer.cancel();
+                hungerTimer.cancel();
                 hobbyTime+=5000;
                 resetTime(hungerTime,hobbyTime);
             }

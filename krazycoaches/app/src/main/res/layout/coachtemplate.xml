@@ -64,7 +64,7 @@
         android:id="@+id/photoG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="40dp"
         android:text="Meme Gallery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,4 +102,5 @@
         android:text="Hobby"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hobbybar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

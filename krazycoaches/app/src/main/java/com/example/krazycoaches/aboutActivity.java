@@ -1,9 +1,12 @@
 package com.example.krazycoaches;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,10 +29,15 @@ import java.util.ArrayList;
 public class aboutActivity extends AppCompatActivity {
     Button holder;
     TextView testTest;
+    ListView aboutListView;
+    Context context;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about_page);
         final ArrayList<AboutInfo> coaches = new ArrayList<>();
+        aboutListView = findViewById(R.id.listview_about);
+        context = this;
+
 
 
 // The code down below isn't neeeded until the about page is set up correctly, then it needs to be modtified
@@ -37,7 +45,7 @@ public class aboutActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         String apiUrl = "https://mikestonecolumbia.github.io/Coaches-API/CoachesInfo.json";
         //Request a string response from the api, going to pull the college
-        JsonObjectRequest collegeRequest = new JsonObjectRequest(Request.Method.GET, apiUrl, null,
+        JsonObjectRequest coachRequest = new JsonObjectRequest(Request.Method.GET, apiUrl, null,
                 new Response.Listener<JSONObject>(){
                     @Override
                     public void onResponse(JSONObject response) {
@@ -53,17 +61,21 @@ public class aboutActivity extends AppCompatActivity {
                                 String quality = coachesInfo.getString("quality");
                                 String fav_food = coachesInfo.getString("favorite_food");
                                 String hobby = coachesInfo.getString("hobby");
-                                if(name.equals("Uthman")) {
+                                //conditional for image view
                                     //uthman drawable
-                                    coaches.add(new AboutInfo(R.drawable.uthmantester,name,asso,college,hobby,fav_food,quality));
+                                    coaches.add(new AboutInfo(R.drawable.ic_launcher_background,name,asso,college,hobby,fav_food,quality));
 
-                                }
+
+
 
                             }
+
                         } catch (JSONException e) {
                             //programmers use this to figure out what went wrong, trouble shooting tactic
                             e.printStackTrace();
                         }
+                        AboutAdapter aboutAdapter = new AboutAdapter(context,coaches);
+                        aboutListView.setAdapter(aboutAdapter);
            }
         }, new Response.ErrorListener() {
             @Override
@@ -77,14 +89,12 @@ public class aboutActivity extends AppCompatActivity {
 
 
 ////        //adding the request to RequestQueue
-//        queue.add(collegeRequest);
+        queue.add(coachRequest);
 
 
+        Log.d("coaches",coaches.size()+"");
 
     }
 
-    public void testIntent(View view) {
-        Intent tester = new Intent(this,MainActivity.class);
-        startActivity(tester);
-    }
+
 }

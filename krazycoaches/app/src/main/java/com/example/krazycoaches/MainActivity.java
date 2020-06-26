@@ -79,4 +79,9 @@ public class MainActivity extends AppCompatActivity {
         }
         startActivity(coachInfo);
         }
+
+    public void toAbout(View view) {
+        Intent toAbout = new Intent(this,aboutActivity.class);
+        startActivity(toAbout);
+    }
 }
