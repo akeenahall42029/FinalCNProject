@@ -15,7 +15,7 @@ public class splash_screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        splash_timer = 10000;
+        splash_timer = 3000;
         context = this;
         splashTime = new CountDownTimer(splash_timer,1000) {
             @Override
