@@ -62,21 +62,21 @@ public class Selection extends AppCompatActivity {
         int flag3 = intIntent.getIntExtra("uthmanInfo", 0);
         if (flag == 1){
             //pull quote info for the String array for each quote
-            coach = new Coaches(R.drawable.evelyntester,40000,40000,"Evelyn");
+            coach = new Coaches(R.drawable.evelyn_about,40000,30000,"Evelyn");
 //            Toast testerToast  = Toast.makeText()
 
         } else if (flag2 == 2) {
-            coach = new Coaches(R.drawable.roebucktester,40000,40000, "Roebuck");
+            coach = new Coaches(R.drawable.roebuck_about_img,40000,30000, "Roebuck");
         } else if (flag3 == 3) {
-            coach = new Coaches(R.drawable.uthmantester,40000,40000,"Uthman");
+            coach = new Coaches(R.drawable.uthmantester,40000,30000,"Uthman");
 
 
         }else{
-            coach = new Coaches(R.drawable.michaeltester,40000,40000,"Michael");
+            coach = new Coaches(R.drawable.michael_about_img,40000,30000,"Michael");
         }
 
         //info input depending on which button was clicked
-        //coachImg.setImageResource(coach.getImage());
+        coachImg.setImageResource(coach.getImage());
         coachName.setText(coach.getName());
         //progress bar amounts declared
         hungerBar.setMax(coach.getHunger());
@@ -84,7 +84,7 @@ public class Selection extends AppCompatActivity {
         getQuotes();
         //countdown time for hunger declaration
          hungerTime = 40000;
-         hobbyTime = 40000;
+         hobbyTime = 30000;
          //ADD COD FROM CLONE
         resetTime(hungerTime,hobbyTime);
 
@@ -206,5 +206,10 @@ public class Selection extends AppCompatActivity {
 
 //        //adding the request to RequestQueue
         queue.add(collegeRequest);
+    }
+
+    public void toMemes(View view) {
+        Intent memeGo = new Intent(this,MemeGallery.class);
+        startActivity(memeGo);
     }
 }

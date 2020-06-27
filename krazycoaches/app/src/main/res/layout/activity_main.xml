@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/titleTd"
@@ -13,6 +14,7 @@
         android:layout_marginTop="92dp"
         android:text="Code Next Harlem Coaches"
         android:textSize="30dp"
+        android:textColor="@color/colorPrimary"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -22,83 +24,98 @@
         android:id="@+id/instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="52dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTd" />
 
-    <ImageButton
+    <Button
         android:id="@+id/michaelB"
         android:layout_width="133dp"
         android:layout_height="111dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginRight="58dp"
+        android:background="@color/yellow"
         android:onClick="toTemplate"
-        app:layout_constraintEnd_toStartOf="@+id/uthmanB"
-        app:layout_constraintHorizontal_bias="0.83"
+        android:text="Coach Michael"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/roebuckB"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageButton
+    <Button
         android:id="@+id/uthmanB"
         android:layout_width="133dp"
         android:layout_height="111dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:background="@color/green"
         android:onClick="toTemplate"
+        android:text="Coach Uthman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/evelynB"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <ImageButton
+    <Button
         android:id="@+id/roebuckB"
         android:layout_width="133dp"
         android:layout_height="111dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="176dp"
         android:layout_marginEnd="60dp"
         android:layout_marginRight="60dp"
+        android:background="@color/blue"
         android:onClick="toTemplate"
+        android:src="@drawable/roebucks"
+        android:text="Coach Roebuck"
         app:layout_constraintEnd_toStartOf="@+id/evelynB"
-        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintHorizontal_bias="0.969"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/titleTd" />
 
-    <ImageButton
+    <Button
         android:id="@+id/evelynB"
         android:layout_width="133dp"
         android:layout_height="111dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        android:background="@color/red"
         android:onClick="toTemplate"
+        android:text="Coach Evelyn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/instructions"
+        app:layout_constraintTop_toBottomOf="@+id/titleTd"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
         android:id="@+id/MemeGallery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/colorAccent"
         android:text="Meme Gallery"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:onClick="toMemes"
+        app:layout_constraintEnd_toStartOf="@+id/aboutBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/michaelB" />
 
     <Button
         android:id="@+id/aboutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="102dp"
+        android:layout_height="44dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
-        android:text="About Page"
+        android:background="@color/colorAccent"
         android:onClick="toAbout"
+        android:text="About Page"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uthmanB" />
 

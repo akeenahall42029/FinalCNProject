@@ -63,10 +63,30 @@ public class aboutActivity extends AppCompatActivity {
                                 String hobby = coachesInfo.getString("hobby");
                                 //conditional for image view
                                     //uthman drawable
-                                    coaches.add(new AboutInfo(R.drawable.ic_launcher_background,name,asso,college,hobby,fav_food,quality));
+                                    if(name.equals("Uthman")) {
+                                        coaches.add(new AboutInfo(R.drawable.uthmantester, name, asso, college, hobby, fav_food, quality));
+                                    }
+                                    else if(name.equals("Roebuck")) {
+                                        coaches.add(new AboutInfo(R.drawable.roebuck_about_img, name, asso, college, hobby, fav_food, quality));
+                                    }
+                                else if(name.equals("Evelyn")) {
+                                    coaches.add(new AboutInfo(R.drawable.evelyn_about, name, asso, college, hobby, fav_food, quality));
+                                } else if(name.equals("Michael Okra")){
+                                        coaches.add(new AboutInfo(R.drawable.okrah, name, asso, college, hobby, fav_food, quality));
+                                    }
+                                if(name.equals("Michael Stone")) {
+                                    coaches.add(new AboutInfo(R.drawable.michael_about_img, name, asso, college, hobby, fav_food, quality));
+                                }
+                               else if(name.equals("Natalie")){
+                                    coaches.add(new AboutInfo(R.drawable.natalie_about, name, asso, college, hobby, fav_food, quality));
 
+                                }else if(name.equals("Emily")){
+                                    coaches.add(new AboutInfo(R.drawable.emily_about_img, name, asso, college, hobby, fav_food, quality));
 
+                                }else if(name.equals("Mauricio")) {
+                                    coaches.add(new AboutInfo(R.drawable.maurie_about, name, asso, college, hobby, fav_food, quality));
 
+                                }
 
                             }
 

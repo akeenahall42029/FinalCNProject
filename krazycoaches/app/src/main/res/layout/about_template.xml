@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
 
-    <ImageView
+
+        <ImageView
             android:id="@+id/coach_img"
             android:layout_width="166dp"
             android:layout_height="123dp"
+            android:layout_gravity="left"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="36dp"
@@ -18,49 +21,82 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/coach_name"
-        android:layout_width="103dp"
-        android:layout_height="32dp"
-        android:layout_gravity="right"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="70dp" />
+        <TextView
+            android:id="@+id/coach_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="70dp"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            />
 
-    <TextView
-        android:id="@+id/coach_asso"
-        android:layout_width="103dp"
-        android:layout_height="32dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="20dp" />
-    <TextView
-        android:id="@+id/coach_quality"
-        android:layout_width="103dp"
-        android:layout_height="32dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="20dp" />
-    <TextView
-        android:id="@+id/fav_food"
-        android:layout_width="103dp"
-        android:layout_height="32dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="20dp" />
-    <TextView
-        android:id="@+id/coach_hobby"
-        android:layout_width="103dp"
-        android:layout_height="32dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="20dp" />
-    <TextView
-        android:id="@+id/coach_college"
-        android:layout_width="103dp"
-        android:layout_height="32dp"
-        android:layout_gravity="right"
-        android:layout_marginRight="70dp"
-        android:layout_marginTop="20dp" />
+        <TextView
+            android:id="@+id/coach_asso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:background="@color/red"
+            />
+        <TextView
+            android:id="@+id/coach_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:background="@color/yellow"
+            android:textSize="15dp"
+
+            />
+        <TextView
+            android:id="@+id/fav_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:textSize="15dp"
+
+            />
+        <TextView
+            android:id="@+id/coach_hobby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:textSize="15dp"
+
+            />
+        <TextView
+            android:id="@+id/coach_college"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:background="@color/red"
+            android:textSize="15dp"
+            />
+
+
+
+
+
+
 
 
 

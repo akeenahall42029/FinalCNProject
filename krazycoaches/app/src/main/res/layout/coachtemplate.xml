@@ -22,7 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="TextView"
+        android:text=""
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        android:secondaryProgressTint="@color/yellow"
         app:layout_constraintTop_toBottomOf="@+id/hungry" />
 
     <ProgressBar
@@ -47,6 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
+        android:secondaryProgressTint="@color/blue"
         app:layout_constraintTop_toBottomOf="@+id/hBtn" />
 
     <Button
@@ -57,6 +62,7 @@
         android:layout_marginLeft="72dp"
         android:layout_marginTop="32dp"
         android:text="Feed"
+        android:background="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hobbybar" />
 
@@ -66,6 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
         android:text="Meme Gallery"
+        android:onClick="toMemes"
+        android:background="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -100,6 +108,7 @@
         android:layout_marginEnd="76dp"
         android:layout_marginRight="76dp"
         android:text="Hobby"
+        android:background="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hobbybar" />
 

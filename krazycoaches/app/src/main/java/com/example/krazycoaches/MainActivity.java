@@ -6,15 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton evelynB;
-    ImageButton roebuckB;
-    ImageButton uthmanB;
-    ImageButton michaelB;
+    Button evelynB;
+    Button roebuckB;
+    Button uthmanB;
+    Button michaelB;
     TextView instructions;
     TextView title;
     CountDownTimer instruction_timer;
@@ -39,17 +40,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 if (millisUntilFinished<=30000) {
-                    instructions.setText("yuuuur");
+                    instructions.setText("Welcome to Krazy Coaches ");
                 }
 
                 if(millisUntilFinished<=25000){
-                    instructions.setText("Hello there, this is sample code ");
+                    instructions.setText("This app is to show appreciation to our coaches at our Google Code Next Program ");
                 }
                 if (millisUntilFinished<=20000){
-                    instructions.setText("Kayley please edit me ");
+                    instructions.setText("Over the years we've created glorious memes of our coaches and we wanted to create a platform to share them");
                 }
                 if (millisUntilFinished<=15000){
-                    instructions.setText("the coaches are great");
+                    instructions.setText("Please enjoy our app and note that its not made for bullying, thanks :)");
 
                 }
             }
@@ -83,5 +84,10 @@ public class MainActivity extends AppCompatActivity {
     public void toAbout(View view) {
         Intent toAbout = new Intent(this,aboutActivity.class);
         startActivity(toAbout);
+    }
+
+    public void toMemes(View view) {
+        Intent goToMemes = new Intent(this,MemeGallery.class);
+        startActivity(goToMemes);
     }
 }

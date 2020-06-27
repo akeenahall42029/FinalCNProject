@@ -17,6 +17,7 @@
         <activity android:name=".Selection"/>
         <activity android:name=".aboutActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".MemeGallery"/>
 
         <activity android:name=".splash_screen">
             <intent-filter>
